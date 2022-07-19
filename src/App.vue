@@ -3,13 +3,13 @@
  * @Date: 2022-07-18 15:49:58
  * @Description:  
  * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-07-18 17:20:12
+ * @LastEditTime: 2022-07-19 17:57:02
  * @site: book.palxp.com
 -->
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-    <div style="width: 750px">
+    <div style="width: 100%">
       <my-swiper
         ref="swiper"
         style="height: 300px"

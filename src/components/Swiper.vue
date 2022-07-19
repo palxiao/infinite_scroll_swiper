@@ -3,14 +3,20 @@
  * @Date: 2022-07-13 15:33:44
  * @Description:  
  * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-07-18 18:36:39
+ * @LastEditTime: 2022-07-19 18:31:59
  * @site: book.palxp.com
 -->
 <template>
   <div ref="swiper" v-show="width" :style="{ width }" class="swiper">
     <div class="ul">
-      <img
-        :style="{ width: `${itemWidth}px`, marginRight: `${spaceBetween}px` }"
+      <my-img
+        :style="{
+          width: `${itemWidth}px`,
+          marginRight: `${
+            i > initialSlide || i < initialSlide - 1 ? 0 : spaceBetween
+          }px`,
+          marginLeft: i < initialSlide - 1 ? spaceBetween + 'px' : undefined,
+        }"
         :class="[
           'li',
           { 'nth-main': i === initialSlide },
@@ -27,7 +33,9 @@
 </template>
 
 <script>
+import myImg from "./Image.vue";
 export default {
+  components: { myImg },
   props: {
     list: {
       default: () => [],
@@ -39,9 +47,9 @@ export default {
       spaceBetween: 48, // 图片之间的间距
       itemWidth: 0,
       slidesPerView: 3, // 一屏幕显示几个? 数字或者默认  auto 自动。
-      initialSlide: 1, // 从第几个开始
+      // initialSlide: 2, // 从第几个开始
       curIndex: 0,
-      transTime: 1000, // 过渡时间
+      transTime: 600, // 过渡时间
       images: [],
       swiperOption: {
         autoplay: {
@@ -57,7 +65,10 @@ export default {
   },
   computed: {
     realImages() {
-      return this.images.slice(0, 4);
+      return this.images.slice(0, this.slidesPerView + 1);
+    },
+    initialSlide() {
+      return Math.floor(this.slidesPerView / 2);
     },
   },
   async mounted() {
@@ -69,7 +80,8 @@ export default {
     const father = dom.parentElement || dom.parentNode;
     this.width = father.offsetWidth + "px";
     this.itemWidth =
-      (father.offsetWidth - this.spaceBetween * (this.slidesPerView - 1)) / 3;
+      (father.offsetWidth - this.spaceBetween * (this.slidesPerView - 1)) /
+      this.slidesPerView;
   },
   methods: {
     domOperation(transition, left) {
@@ -150,7 +162,6 @@ export default {
   margin: 0;
 }
 .li {
-  list-style: none;
   height: 100%;
   display: flex;
   align-items: center;

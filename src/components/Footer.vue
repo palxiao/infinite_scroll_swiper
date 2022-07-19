@@ -3,7 +3,7 @@
  * @Date: 2022-07-15 15:48:31
  * @Description:  
  * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-07-18 17:13:46
+ * @LastEditTime: 2022-07-19 17:30:48
  * @site: book.palxp.com
 -->
 <template>
@@ -46,6 +46,7 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  position: relative;
 }
 .triangle {
   width: 0;
