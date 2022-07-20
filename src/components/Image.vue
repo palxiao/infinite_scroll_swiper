@@ -3,7 +3,7 @@
  * @Date: 2022-07-19 17:18:35
  * @Description:  
  * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-07-19 18:28:10
+ * @LastEditTime: 2022-07-20 14:54:57
  * @site: book.palxp.com
 -->
 <template>
@@ -21,19 +21,19 @@ export default {
   data() {
     return {
       loading: false,
-    };
+    }
   },
   watch: {
     src() {
-      this.loading = true;
+      this.loading = true
     },
   },
   methods: {
     loadDone() {
-      this.loading = false;
+      this.loading = false
     },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -55,7 +55,7 @@ export default {
 }
 .load::after {
   position: absolute;
-  content: "";
+  content: '';
   top: 50%;
   left: 50%;
   width: 30px;

@@ -3,7 +3,7 @@
  * @Date: 2022-07-15 15:48:31
  * @Description:  
  * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-07-19 17:30:48
+ * @LastEditTime: 2022-07-20 15:39:37
  * @site: book.palxp.com
 -->
 <template>
@@ -19,7 +19,7 @@ export default {
   props: {
     title: {},
   },
-};
+}
 </script>
 
 <style scoped>
@@ -31,6 +31,7 @@ export default {
   justify-content: center;
 }
 .title {
+  user-select: none;
   opacity: 0.6;
   width: 24%;
   margin: 0 2%;
@@ -64,18 +65,9 @@ export default {
   align-items: center;
   width: 42px;
   height: 42px;
-  background: linear-gradient(
-    315deg,
-    rgba(23, 57, 142, 0.1) 0%,
-    rgba(73, 111, 208, 0.4) 100%
-  );
+  background: linear-gradient(315deg, rgba(23, 57, 142, 0.1) 0%, rgba(73, 111, 208, 0.4) 100%);
   border: 1px solid;
-  border-image: linear-gradient(
-      90deg,
-      rgba(170, 195, 255, 1),
-      rgba(255, 255, 255, 0)
-    )
-    1 1;
+  border-image: linear-gradient(90deg, rgba(170, 195, 255, 1), rgba(255, 255, 255, 0)) 1 1;
 }
 /* .left:hover, .right:hover {
 
