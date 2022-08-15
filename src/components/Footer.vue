@@ -3,7 +3,7 @@
  * @Date: 2022-07-15 15:48:31
  * @Description:  
  * @LastEditors: ShawnPhang
- * @LastEditTime: 2022-07-20 15:39:37
+ * @LastEditTime: 2022-08-15 14:26:55
  * @site: book.palxp.com
 -->
 <template>
@@ -26,6 +26,7 @@ export default {
 .foot {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
